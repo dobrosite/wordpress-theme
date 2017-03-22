@@ -1,0 +1,114 @@
+/**
+ * Сайт (вся страница).
+ *
+ * Должен применяться к тегу <body>.
+ */
+
+/* Пример разметки:
+
+<body class="site">
+<div class="site__constraint">
+    <header class="site__header"></header>
+    <main class="site__main"></main>
+    <aside class="site__sidebar site__sidebar_on_left"></aside>
+    <aside class="site__sidebar site__sidebar_on_right"></aside>
+    <footer class="site__footer"></footer>
+</div>
+</body>
+
+ */
+
+.site {
+    @include reset-body;
+    display: block;
+
+    /*
+     * Обёртка для содержимого страницы.
+     * Может использоваться для ограничения ширины или создания эффектов.
+     */
+    &__constraint {
+        @include reset-box-model;
+        @include display-flex(flex);
+        @include flex-flow(row wrap);
+        margin: 0 auto;
+        max-width: $siteBodyMaxWidth;
+        min-height: 100vh;
+        min-width: $siteBodyMinWidth;
+        overflow: hidden; // Если у вложенных блоков есть тени, замените на «visible».
+    }
+
+    /*
+     * Подвал сайта.
+     */
+    &__footer {
+        @include reset-box-model;
+        @include flex(1 100%);
+        display: block;
+
+        @include for-tablet-landscape-and-wider {
+            @include order(4);
+        }
+    }
+
+    /*
+     * Шапка сайта.
+     */
+    &__header {
+        @include reset-box-model;
+        @include flex(1 100%);
+        display: block;
+    }
+
+    /*
+     * Область главного содержимого.
+     */
+    &__main {
+        @include reset-box-model;
+        @include flex(1 100%);
+        display: block;
+
+        @include for-tablet-landscape-and-wider {
+            @include flex(3 0);
+            @include order(2);
+        }
+    }
+
+    /*
+     * Боковая панель.
+     */
+    &__sidebar {
+        @include reset-box-model;
+        @include flex(1 100%);
+        display: block;
+
+        @include for-tablet-landscape-and-wider {
+            @include flex(1 auto);
+        }
+
+        &_on {
+            /*
+             * Левая панель.
+             */
+            &_left {
+                @include reset-box-model;
+                display: block;
+
+                @include for-tablet-landscape-and-wider {
+                    @include order(1);
+                }
+            }
+
+            /*
+             * Правая панель.
+             */
+            &_right {
+                @include reset-box-model;
+                display: block;
+
+                @include for-tablet-landscape-and-wider {
+                    @include order(3);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/**
+ * Стили для клиентской части сайта.
+ *
+ * Будет скомпилирован в assets/css/style.css.
+ */
+
+@import "compass-mixins/compass";
+@import "include/vars";
+@import "include/fonts";
+@import "include/effects";
+@import "include/adaptive";
+@import "include/style";
+@import "include/defaults";
+
+// Располагайте подключения в алфавитном порядке.
+@import "site";

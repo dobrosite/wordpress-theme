@@ -1,0 +1,149 @@
+/**
+ * Стили тегов.
+ *
+ * Располагайте теги в алфавитном порядке.
+ */
+
+@include global-reset;
+
+a {
+    /*
+     * В Firefox, если задан переход стилей для ссылок, смене состояния ссылки от :hover к :visited
+     * будет показано ещё и состояние :link, что выглядит некрасиво.
+     */
+    @include transition(all linear 0s);
+    color: $linkColor;
+    text-decoration: underline;
+
+    &:visited {
+        color: $linkColorVisited;
+    }
+
+    &:hover {
+        color: $linkColorHover;
+    }
+}
+
+body {
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headingFontFamily;
+    // На смартфонах заголовки смотрятся выровненными по середине.
+    text-align: center;
+
+    &:first-child {
+        // Если это первый узел в этом контейнер, отступ сверху не нужен.
+        margin-top: 0;
+    }
+
+    @include for-tablet-portrait-and-wider {
+        // Если места много, можно вернуть привычное выравнивание по ширине.
+        text-align: left;
+    }
+}
+
+/*
+ * Настройки заголовков.
+ */
+
+h1 {
+    color: $headingColor;
+}
+
+h2 {
+    color: $headingColor;
+}
+
+h3 {
+    color: $headingColor;
+}
+
+h4 {
+    color: $headingColor;
+}
+
+h5 {
+    color: $headingColor;
+}
+
+h6 {
+    color: $headingColor;
+}
+
+// Размеры заголовков. См. http://type-scale.com/
+@mixin scale-headings($ratio) {
+    h1 {
+        font-size: 1em * $ratio * $ratio * $ratio;
+    }
+
+    h2 {
+        font-size: 1em * $ratio * $ratio;
+    }
+
+    h3 {
+        font-size: 1em * $ratio;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    h5 {
+        font-size: 1em / $ratio;
+    }
+
+    h6 {
+        font-size: 1em / $ratio / $ratio;
+    }
+}
+
+@include scale-headings($headingRatioPhone);
+
+@include for-tablet-portrait-and-wider {
+    @include scale-headings($headingRatioTabletPortrait);
+}
+
+@include for-tablet-landscape-and-wider {
+    @include scale-headings($headingRatioTabletLandscape);
+}
+
+@include for-desktop-and-wider {
+    @include scale-headings($headingRatioDesktop);
+}
+
+@include for-wide-screens {
+    @include scale-headings($headingRatioWideScreen);
+}
+
+html {
+    font-family: $textFontFamily;
+    font-size: $rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+input {
+    &[type=button],
+    &[type=submit] {
+        /*
+         * В Firefox, если задан переход стилей для кнопок, то при наведении мыши будет некрасивое
+         * мелькание.
+         */
+        @include transition(all linear 0s);
+        border: none;
+        cursor: pointer;
+        font-family: $textFontFamily;
+    }
+}
+
+ol {
+    @include reset-list-style;
+}
+
+ul {
+    @include reset-list-style;
+}
+

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/**
+ * Стили для визуального редактора.
+ *
+ * Будет скомпилирован в assets/css/editor-style.css.
+ */
+
+@import "compass-mixins/compass";
+@import "include/vars";
+@import "include/fonts";
+@import "include/adaptive";
+@import "include/style";
+@import "include/defaults";

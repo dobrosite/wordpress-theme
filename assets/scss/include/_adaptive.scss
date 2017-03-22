@@ -1,0 +1,47 @@
+/**
+ * Адаптивный дизайн.
+ */
+
+/**
+ * Стили для планшетов в вертикальном положении (600+ пикселей).
+ *
+ * @link http://css-live.ru/articles-css/pravilnye-kontrolnye-tochki-v-css.html
+ */
+@mixin for-tablet-portrait-and-wider {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+/**
+ * Стили для для планшетов в горизонтальном положении (900+ пикселей).
+ *
+ * @link http://css-live.ru/articles-css/pravilnye-kontrolnye-tochki-v-css.html
+ */
+@mixin for-tablet-landscape-and-wider {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+/**
+ * Стили для настольных компьютеров (1200+ пикселей).
+ *
+ * @link http://css-live.ru/articles-css/pravilnye-kontrolnye-tochki-v-css.html
+ */
+@mixin for-desktop-and-wider {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+/**
+ * Стили для широкоформатных устройств (1800+ пикселей).
+ *
+ * @link http://css-live.ru/articles-css/pravilnye-kontrolnye-tochki-v-css.html
+ */
+@mixin for-wide-screens {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}

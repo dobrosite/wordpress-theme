@@ -1,0 +1,58 @@
+/**
+ * Глобальные переменные.
+ */
+
+/*
+ * Базовая единица.
+ * Будет задано как значение font-size тега html.
+ * Изменение этого значения приведёт к масштабированию всех размеров страницы.
+ */
+$rem: 16px;
+
+// Наименьшая ширина тела страницы.
+$siteBodyMinWidth: 320px;
+// Наибольшая ширина тела страницы.
+$siteBodyMaxWidth: 1600px;
+
+/* Значения для белого и чёрного цветов. */
+$colorWhite: #fefefe;
+$colorBlack: #111;
+
+/* Оттенки серого. */
+$colorGrayDarkest: #333;
+$colorGrayDark: #555;
+$colorGray: #999;
+$colorGrayLight: #ccc;
+$colorGrayLightest: #eee;
+
+/*
+ * Основные цвета.
+ * Внимание! Эти переменные можно использовать только в этом файле.
+ * Для использования в других файлах, определите семантические переменные, например:
+ * $textColor: $color1;
+ */
+$color1: #00b92d;
+$color2: #00b95b;
+$color3: #00b98a;
+$color4: #00b9b8;
+$color5: #008bb9;
+$color6: #005db9;
+
+/* Основной текст. */
+$textColor: $colorBlack;
+$textFontFamily: 'Open Sans', 'Droid Sans', sans-serif;
+
+/* Заголовки. */
+$headingFontFamily: Arial, sans-serif;;
+$headingColor: $colorGrayDarkest;
+// Коэффициенты изменения размера заголовков. См. http://type-scale.com/
+$headingRatioPhone: 1.067; // Малая секунда.
+$headingRatioTabletPortrait: 1.125; // Большая секунда.
+$headingRatioTabletLandscape: 1.2; // Малая терция.
+$headingRatioDesktop: 1.2; // Малая терция.
+$headingRatioWideScreen: 1.25; // Большая терция.
+
+/* Ссылки. */
+$linkColor: $color5;
+$linkColorVisited: $color6;
+$linkColorHover: $color4;

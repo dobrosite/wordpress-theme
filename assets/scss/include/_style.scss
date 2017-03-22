@@ -1,0 +1,58 @@
+/**
+ * Стилевые элементы сайта.
+ */
+
+/*
+ * Стили главной кнопки.
+ */
+@mixin button_style_primary()
+{
+    @include background(linear-gradient(#b6814f, #c49262, #c28c59));
+
+    &:hover {
+        @include background(linear-gradient(#d56852, #d67662, #d26e59));
+    }
+}
+
+@mixin button() {
+    -webkit-appearance: button;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Merriweather, Georgia, serif;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0;
+    max-width: 100%;
+    overflow: visible;
+    padding: .4em 1em;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+    }
+
+    &[disabled] {
+        cursor: default;
+        opacity: .5;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    @media print {
+        display: none;
+    }
+
+    &_style {
+        &_primary {
+            @include button_style_primary();
+        }
+    }
+}
+
