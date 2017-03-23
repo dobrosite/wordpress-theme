@@ -1,0 +1,49 @@
+/**
+ * Атрибуция сайта (логотип, название и т. п.)
+ */
+.site-branding {
+    $logoHeightMobile: 30px;
+    $logoWidthMobile: 30px;
+
+    font-size: 1rem;
+    width: 100%;
+
+    /**
+     * Вид деятельности.
+     */
+    &__activity {
+        text-align: center;
+    }
+
+    /**
+     * Логотип.
+     */
+    &__logo {
+        display: block;
+        float: left;
+        height: $logoHeightMobile;
+        margin: 0;
+        width: $logoWidthMobile;
+    }
+
+    /**
+     * Название сайта.
+     */
+    &__title {
+        font-size: 1.5em;
+        height: $logoHeightMobile;
+        margin-right: $logoWidthMobile;
+        text-align: center;
+    }
+}
+
+/**
+ * Если страница прокручена вниз.
+ */
+.site_scrolled {
+    .site-branding__activity {
+        font-size: 1px;
+        height: 0;
+        overflow: hidden;
+    }
+}

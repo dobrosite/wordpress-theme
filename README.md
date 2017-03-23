@@ -3,7 +3,9 @@
 ## Требования
 
 * Плагины
-    * [WP-SCSS](https://ru.wordpress.org/plugins/wp-scss/)
+    * [WP-SCSS](https://ru.wordpress.org/plugins/wp-scss/), настройки:
+    	* Scss Location → `/assets/scss/`	
+    	* CSS Location → `/assets/css/`	
 
 ## Файловая структура
 

@@ -1,0 +1,24 @@
+/**
+ * Блок разработчика сайта.
+ */
+.dobrosite {
+    font-size: .8rem;
+
+    /**
+     * Ссылка
+     */
+    &__link {
+        color: $colorGrayLightest;
+        text-decoration: underline;
+
+        &:visited {
+            color: $colorGrayLightest;
+            text-decoration: underline;
+        }
+
+        &:hover {
+            color: $colorGrayLightest;
+            text-decoration: none;
+        }
+    }
+}

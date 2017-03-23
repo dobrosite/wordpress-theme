@@ -6,11 +6,12 @@
 
 @include global-reset;
 
+* {
+    @include box-sizing(border-box);
+}
+
 a {
-    /*
-     * В Firefox, если задан переход стилей для ссылок, смене состояния ссылки от :hover к :visited
-     * будет показано ещё и состояние :link, что выглядит некрасиво.
-     */
+    /* В Firefox (по версию 51 точно) некрасиво происходит смена стилей при наведении мыши. */
     @include transition(all linear 0s);
     color: $linkColor;
     text-decoration: underline;
@@ -26,6 +27,11 @@ a {
 
 body {
     font-size: 1rem;
+}
+
+button {
+    /* В Firefox (по версию 51 точно) некрасиво происходит смена стилей при наведении мыши. */
+    @include transition(all linear 0s);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -119,10 +125,14 @@ h6 {
 
 html {
     font-family: $textFontFamily;
-    font-size: $rem;
+    font-size: 0.9 * $rem;
     margin: 0;
     padding: 0;
     width: 100%;
+
+    @include for-tablet-portrait-and-wider {
+        font-size: $rem;
+    }
 }
 
 input {

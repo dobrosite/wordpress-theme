@@ -1,0 +1,57 @@
+/**
+ * Запись блога.
+ */
+.post {
+    font-size: 1rem;
+
+    /**
+     * Содержимое записи.
+     */
+    &__content {
+
+    }
+
+    /**
+     * Шапка записи.
+     */
+    &__header {
+        margin: 0 0 .5em;
+    }
+
+    /**
+     * Мета-данные записи.
+     */
+    &__meta {
+        font-size: 90%;
+        color: $colorGray;
+    }
+
+    /**
+     * Время публикации.
+     */
+    &__published {
+
+    }
+
+    /**
+     * Миниатюра записи.
+     */
+    &__thumbnail {
+
+    }
+
+    /**
+     * Заголовок записи.
+     */
+    &__title {
+        font-family: $headingFontFamily;
+        color: $headingColor;
+    }
+
+    /**
+     * Время обновления.
+     */
+    &__updated {
+
+    }
+}

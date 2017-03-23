@@ -1,0 +1,17 @@
+/**
+ * Логотип.
+ */
+.logo {
+    display: block;
+    font-size: 1rem;
+    overflow: hidden;
+
+    /**
+     * Картинка.
+     */
+    &__image {
+        display: block;
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
